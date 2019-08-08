@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
+import styled from 'styled-components'
 import Dashboard from "./utility/Dashboard"; 
+
+import "./index.scss"
 
 function App() {
 
@@ -46,9 +49,12 @@ function App() {
     setFouls(0); 
   }
   
+  const StyleDiv = styled.div`
+  background: darkcyan; 
+  `
 
   return (
-    <div className="App">
+    <StyleDiv className="App">
       <Dashboard 
       handleHit={handleHit} 
       handleBalls={handleBalls} 
@@ -59,7 +65,7 @@ function App() {
       fouls={fouls}
       hits={hits}
       />
-    </div>
+    </StyleDiv>
   );
 }
 
