@@ -54,6 +54,7 @@ function App() {
       strikes={strikes}
       balls={balls}
       fouls={fouls}
+      hits={hits}
       />
     </div>
   );
