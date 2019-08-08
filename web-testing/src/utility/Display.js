@@ -2,9 +2,7 @@ import React from 'react';
 
 function Display(props) {
     console.log(props.props.strikes); 
-    if(props.props.strikes === 3) {
-        return <p>BATTER IS OUT</p>
-    }
+    
     return (
         <div>
             <p>Strikes: {props.props.strikes}</p>

@@ -15,6 +15,9 @@ function App() {
     } else {
       setStrikes(0); 
     }
+    if(strikes === 3) {
+      return <p>BATTER IS OUT</p>
+      }
     console.log(strikes); 
   } 
 

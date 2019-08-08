@@ -1,7 +1,7 @@
 import React from 'react';
 import Display from "./Display"
 function Dashboard(props) {
-    
+
     return (
         <div>
             <h1>Baseball Tally Dashboard</h1>
