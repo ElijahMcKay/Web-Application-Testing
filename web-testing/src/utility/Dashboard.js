@@ -9,7 +9,7 @@ function Dashboard(props) {
     `
 
     const StyleH1 = styled.h1`
-    font-size: 58px; 
+    font-size: 58px;  
     color: white; 
     padding-top: 3rem; 
     `
