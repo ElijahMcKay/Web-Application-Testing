@@ -1,21 +1,62 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Dashboard from "./utility/Dashboard"; 
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+function App() {
+
+  const [ strikes, setStrikes ] = useState(0); 
+  const [ balls, setBalls ] = useState(0); 
+  const [ fouls, setFouls ] = useState(0); 
+  const [ hits, setHits ] = useState(0); 
+
+  const handleStrikes = () => {
+    if(strikes < 2) {
+      setStrikes(strikes + 1);
+    } else {
+      setStrikes(0); 
+    }
+    console.log(strikes); 
+  } 
+
+  const handleBalls = () => {
+    if(balls < 3) {
+      setBalls(balls + 1); 
+    } else {
+      setBalls(0); 
+      setFouls(0); 
+      setStrikes(0); 
+    }
+    console.log(balls); 
   }
+
+  const handleFouls = () => {
+    if(strikes < 2) {
+      setStrikes(strikes + 1); 
+    }
+    console.log(fouls); 
+  }
+
+  const handleHit = () => {
+    setHits(hits + 1); 
+    setStrikes(0); 
+    setBalls(0); 
+    setFouls(0); 
+  }
+  
+
+  return (
+    <div className="App">
+      <Dashboard 
+      handleHit={handleHit} 
+      handleBalls={handleBalls} 
+      handleStrikes={handleStrikes} 
+      handleFouls={handleFouls}
+      strikes={strikes}
+      balls={balls}
+      fouls={fouls}
+      />
+    </div>
+  );
 }
 
 export default App;
